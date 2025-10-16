@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Hai, Web Ini Buatan Hamidah 💖</title>
+
+    <style>
+        /* ===================================== */
+        /* VARIABEL DAN DASAR CSS */
+        /* ===================================== */
+        :root {
+            --color-pink-primary: #ff69b4; 
+            --color-pink-dark: #d81b60;   
+            --color-pink-light: #fce4ec;  
+            --color-text-dark: #4a148c;   
+            --color-shadow: rgba(0, 0, 0, 0.2);
+            --color-glitter: #fff0f5;     
+            --color-card-bg: #ffffff;
+            --color-accent: #ffb6c1;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: var(--color-pink-light);
+            scroll-behavior: smooth;
+        }
+
+        /* ===================================== */
+        /* LANDING PAGE CONTAINER & STYLE */
+        /* ===================================== */
+        #landing-page {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(145deg, var(--color-pink-light) 0%, var(--color-accent) 100%);
+            position: relative;
+            overflow: hidden; 
+        }
+
+        /* Efek Glitter */
+        #landing-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; /* Lebar 100% HP */
+            height: 100%;
+            background-image: radial-gradient(var(--color-glitter) 2px, transparent 0);
+            background-size: 30px 30px;
+            opacity: 0.5;
+            animation: moveGlitter 30s linear infinite;
+        }
+
+        @keyframes moveGlitter {
+            from { background-position: 0 0; }
+            to { background-position: 300px 300px; }
+        }
+
+        /* Konten Box - Ukuran relatif agar pas di HP */
+        .content-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 30px; /* Padding lebih kecil untuk HP */
+            border-radius: 20px;
+            box-shadow: 0 15px 30px var(--color-shadow);
+            max-width: 85%; /* Maksimal 85% lebar layar */
+            z-index: 10;
+            border: 3px solid var(--color-pink-primary);
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .content-box h1 { 
+            color: var(--color-pink-dark); 
+            font-size: 2em; /* Font lebih kecil di HP */
+            margin-bottom: 10px; 
+        }
+
+        /* Tombol Masuk */
+        .enter-button {
+            padding: 12px 30px; /* Padding lebih kecil untuk HP */
+            font-size: 1.1em;
+            /* ... style lainnya tidak berubah ... */
+        }
+
+
+        /* ===================================== */
+        /* KONTEN UTAMA (CERPEN) */
+        /* ===================================== */
+        #main-content {
+            min-height: 100vh;
+            padding: 30px 5%; /* Padding relatif untuk HP */
+            background-color: white;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+            display: none;
+        }
+        
+        .visible { opacity: 1 !important; }
+
+        .container {
+            max-width: 100%; /* Memastikan kontainer mengisi penuh di HP */
+            margin: 0 auto;
+        }
+        
+        /* Styling Cerpen */
+        .cerpen-header h1 {
+            font-size: 2em; /* Font cerpen lebih kecil di HP */
+        }
+        
+        .cerpen-content {
+            font-size: 1em; /* Ukuran font normal untuk HP */
+            text-align: justify;
+            line-height: 1.7;
+        }
+        
+        .cerpen-content p {
+            margin-bottom: 1.3em;
+            text-indent: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="landing-page">
+        <div class="content-box">
+            <h1>Hai, Web Ini Buatan Hamidah! 🎀</h1>
+            <p>Welcome di galeri digital milik Midah! Klik untuk melihat cerpen saya.</p> 
+
+            <button class="enter-button" onclick="showMainContent()">MASUK</button>
+        </div>
+    </div>
+
+    <div id="main-content">
+        <div class="container">
+            
+            <p style="text-align: center; color: var(--color-pink-primary); font-weight: bold; font-size: 1.2em;">Allo, ini cerpen tentang Midah!</p>
+            
+            <div class="cerpen-header">
+                <h1>Logika Dongeng dan Baris Kode</h1>
+                <p>Ini adalah cerita pendek (cerpen) yang terinspirasi dari perjalanan unik dan prestasi Hamidah.</p>
+            </div>
+
+            <div class="cerpen-content">
+                <p>Udara di ruang kuliah terasa dingin, kontras dengan hangatnya layar laptop di hadapan Midah. Barisan sintaks Python menari-nari di depannya, menuntut logika yang keras dan tanpa kompromi. Ia, <span class="highlight">Midah, anak Informatika semester tiga</span>, tersenyum kecil. Siapa sangka, jalan hidupnya membawanya ke sini, ke dunia coding yang ia cintai.</p>
+                
+                <p>"Kamu serius, Midah? Anak <span class="highlight">IPS, Juara Umum</span> pula, kok malah masuk Teknik Informatika?" Pertanyaan itu sudah tak terhitung kali ia dengar, biasanya dari teman SMA-nya.</p>
+                
+                <p>Midah selalu menjawabnya dengan santai, "Kenapa tidak? Logika IPS dan logika coding itu mirip, lho."</p>
+                
+                <p>Saat SMA, nama Midah identik dengan deretan prestasi. Di setiap pembagian rapor, namanya selalu berada di puncak: <span class="highlight">Juara 1 Umum</span>. Ia menguasai Sosiologi, Ekonomi, dan Geografi, tetapi prestasi yang paling ia banggakan tak tertulis di rapor: <span class="highlight">menang lomba cerpen</span>.</p>
+                
+                <p>Kecintaannya pada cerita dimulai sejak ia kecil. Uang sakunya selalu habis untuk membeli <span class="highlight">buku dongeng</span>. Rak kamarnya penuh sesak dengan novel fantasi, misteri, dan romansa. <span class="highlight">Membaca</span> bukan sekadar hobi, itu adalah cara ia membedah dunia. Ia mencari tahu, mengapa karakter ini membuat keputusan itu? Apa alur logis yang mendasari plot ini?</p>
+                
+                <p>Saat ia mendapatkan <span class="highlight">beasiswa penuh untuk kuliah di jurusan Informatika</span>, banyak yang terkejut. Namun, Midah tahu ini adalah takdir yang sempurna.</p>
+                
+                <p>"Saat kamu membaca novel," jelas Midah suatu sore pada dosennya, "kamu harus mengerti alur. Ada <span class="highlight">Input</span> (perkenalan tokoh), <span class="highlight">Proses</span> (konflik dan perkembangan), dan <span class="highlight">Output</span> (resolusi). Sama seperti coding. Kamu punya input data, melalui fungsi atau algoritma, dan menghasilkan output yang terstruktur."</p>
+                
+                <p>Bagi Midah, coding adalah bentuk narasi yang paling murni. Alih-alih menggunakan kata-kata, ia menggunakan barisan kode untuk menceritakan kepada komputer apa yang harus dilakukan. Kemampuannya sebagai pemenang lomba cerpen membuatnya unggul dalam menganalisis alur dan struktur—keterampilan dasar yang sangat krusial dalam menyusun algoritma yang efisien.</p>
+                
+                <p>Di semester tiga ini, saat teman-temannya kesulitan memahami logika conditional statement atau loop, Midah justru merasa seperti sedang merangkai konflik cerita. Jika kondisi A terjadi, maka eksekusi alur B (seperti, jika Ksatria gagal, maka Putri harus mencari solusi lain).</p>
+                
+                <p>Ia kini sedang mengerjakan proyek data structure. Di kepalanya, ia membayangkan setiap node data sebagai karakter dalam dongeng. Tugasnya adalah menyusun struktur data itu, memastikan setiap karakter (data) berada di tempat yang paling logis dan mudah dijangkau.</p>
+                
+                <p>Midah menutup laptopnya. Ia telah menemukan tempatnya. Dunia yang awalnya ia cintai melalui buku-buku lama kini berwujud command line dan interface yang cerah. Ia telah berhasil merajut logika dongeng dari masa lalunya menjadi baris kode yang kuat di masa depannya. <span class="highlight">Ia mendapatkan beasiswa ini, ia menyukainya</span>, dan ia siap membuktikan bahwa narasi terbaik adalah yang memiliki logika paling kokoh.</p>
+                
+                <p style="text-align: right; margin-top: 30px; font-style: italic; color: var(--color-pink-dark);">— The End —</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        function showMainContent() {
+            const landing = document.getElementById('landing-page');
+            const main = document.getElementById('main-content');
+            
+            // 1. Sembunyikan landing page
+            landing.style.opacity = '0';
+            
+            // 2. Tunda sebelum menampilkan main content
+            setTimeout(() => {
+                landing.style.display = 'none'; 
+                main.style.display = 'block'; 
+                
+                // 3. Efek fade-in
+                setTimeout(() => {
+                    main.classList.add('visible');
+                    window.scrollTo(0, 0); 
+                }, 50);
+                
+            }, 1000); 
+        }
+    </script>
+</body>
+</html>
